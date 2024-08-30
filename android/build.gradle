@@ -18,4 +18,18 @@ buildscript {
     }
 }
 
+subprojects {
+    afterEvaluate { project ->
+        if (project.hasProperty("android")) {
+            android {
+                variantFilter { variant ->
+                    if (variant.name.contains("mlkit")) {
+                        variant.ignore = true
+                    }
+                }
+            }
+        }
+    }
+}
+
 apply plugin: "com.facebook.react.rootproject"

@@ -1,14 +1,16 @@
 import { View } from 'react-native'
 import React from 'react'
-import Camera from './Components/Camera'
+import Design from './Components/Design'
 
-export default function App() {
+const App = () => {
   return (
     <View style={{flex:1}}>
-      <Camera/>
+      <Design/>
     </View>
   )
 }
+
+export default App
 
 
 

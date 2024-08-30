@@ -8,7 +8,7 @@ const Design = () => {
   return (
     <View style={styles.container}>
       <View style={styles.headerContainer}>
-        {/* HODLINFO Text */}
+    
         <Text style={styles.title}>HODLINFO</Text>
 
         {/* Centered Dropdown */}
@@ -24,7 +24,7 @@ const Design = () => {
           <Text style={styles.dropdownText}>BUY BTC</Text>
         </View>
 
-        {/* Telegram Button */}
+        
         <TouchableOpacity style={styles.telegramButton}>
           <Image
             source={{ uri: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Telegram_Messenger.png' }}
@@ -33,7 +33,7 @@ const Design = () => {
           <Text style={styles.telegramButtonText}>Telegram</Text>
         </TouchableOpacity>
       </View>
-
+      <Text style={styles.subTextCenter}>Best Price to Trade</Text>
       <View style={styles.header}>
         <View style={styles.percentageContainer}>
           <Text style={styles.percentageText}>0.1 %</Text>
@@ -42,6 +42,9 @@ const Design = () => {
         <View style={styles.percentageContainer}>
           <Text style={styles.percentageText}>0.96 %</Text>
           <Text style={styles.subText}>1 Hour</Text>
+        </View>
+        <View style={styles.percentageContainer}>
+        <Text style={styles.bestPrice}>₹ 26,56,110</Text>
         </View>
         <View style={styles.percentageContainer}>
           <Text style={styles.percentageText}>2.73 %</Text>
@@ -53,12 +56,12 @@ const Design = () => {
         </View>
       </View>
 
-      <Text style={styles.bestPrice}>₹ 26,56,110</Text>
-      <Text style={styles.subTextCenter}>Best Price to Trade</Text>
+      
+      <Text style={styles.subTextCenter}>Average BTC/INR net price including commission</Text>
 
       <ScrollView style={styles.tableContainer} horizontal={false}>
         <View style={styles.table}>
-          {/* Table Header */}
+    
           <View style={styles.tableHeader}>
             <Text style={[styles.tableHeaderText, styles.tableIndex]}>#</Text>
             <Text style={[styles.tableHeaderText, styles.tablePlatform]}>Platform</Text>
@@ -68,7 +71,7 @@ const Design = () => {
             <Text style={[styles.tableHeaderText, styles.tableSavings]}>Savings</Text>
           </View>
 
-          {/* Example Row for First Table */}
+     
           <View style={styles.tableRow}>
             <Text style={[styles.tableRowText, styles.tableIndex]}>1</Text>
             <View style={styles.tablePlatform}>
@@ -84,7 +87,7 @@ const Design = () => {
             <Text style={[styles.tableRowTextRed, styles.tableSavings]}>▼ ₹ 83,498</Text>
           </View>
 
-          {/* Example Row for Second Table */}
+          
           <View style={styles.tableRow}>
             <Text style={[styles.tableRowText, styles.tableIndex]}>2</Text>
             <View style={styles.tablePlatform}>
@@ -100,7 +103,7 @@ const Design = () => {
             <Text style={[styles.tableRowTextRed, styles.tableSavings, styles.unique]}>▲ ₹ 2,27,796</Text>
           </View>
 
-          {/* Example Row for Third Table */}
+ 
           <View style={styles.tableRow}>
             <Text style={[styles.tableRowText, styles.tableIndex]}>3</Text>
             <View style={styles.tablePlatform}>
@@ -116,7 +119,7 @@ const Design = () => {
             <Text style={[styles.tableRowTextRed, styles.tableSavings]}>▼ ₹ 50,000</Text>
           </View>
 
-          {/* Example Row for Fourth Table */}
+       
           <View style={styles.tableRow}>
             <Text style={[styles.tableRowText, styles.tableIndex]}>4</Text>
             <View style={styles.tablePlatform}>
@@ -135,7 +138,7 @@ const Design = () => {
       </ScrollView>
 
       <View style={styles.buttonContainer}>
-        <Button title="Submit" color="#00FFC6" />
+       <TouchableOpacity style={styles.lastBtn}><Text style={{color:'#00FFC6'}}> Add holdlinfo to home screen</Text></TouchableOpacity>
       </View>
     </View>
   );
@@ -217,6 +220,7 @@ height:25
     fontSize: 10,
     textAlign: 'center',
     marginBottom: 10,
+    marginTop:10
   },
   bestPrice: {
     fontSize: 28,
@@ -288,6 +292,13 @@ paddingVertical:35
     marginTop: 20,
     alignItems: 'center',
   },
+  lastBtn:{
+    paddingVertical:10,
+    paddingHorizontal:20,
+    borderWidth:1,
+    borderColor:'#00FFC6',
+    marginBottom:50
+  }
 });
 
 export default Design;

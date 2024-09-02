@@ -104,6 +104,7 @@ const Design = () => {
           </View>
 
  
+ 
           <View style={styles.tableRow}>
             <Text style={[styles.tableRowText, styles.tableIndex]}>3</Text>
             <View style={styles.tablePlatform}>

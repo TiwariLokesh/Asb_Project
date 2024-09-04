@@ -67,6 +67,7 @@ const Assignment = () => {
                 <Text style={styles.quantity}>14</Text>
                 <TouchableOpacity>
                 <View style={styles.iconBox}>
+                
                   <Image
                   source={require('./assests/plus.png')}
                     style={styles.controlIcon} />

@@ -238,6 +238,7 @@ borderRadius:5
     borderTopWidth: 1,
     borderColor: '#e0e0e0',
   },
+  
   footerIcon: {
     width: 32,
     height: 32,

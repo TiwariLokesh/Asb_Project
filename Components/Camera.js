@@ -7,6 +7,7 @@ const Camera = () => {
   const [imageUri, setImageUri] = useState(null);
 
   const requestCameraPermission = async () => {
+    
     try {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.CAMERA,

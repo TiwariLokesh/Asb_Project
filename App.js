@@ -1,14 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import Design from './Components/Design';
 
 const App = () => {
   return (
-    <View>
-      <Text>App</Text>
+    <View style={{flex:1}}>
+      <Design/>
     </View>
   )
 }
 
 export default App
-
-const styles = StyleSheet.create({})

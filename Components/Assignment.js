@@ -34,6 +34,7 @@ const Assignment = () => {
       <Text style={styles.subtotal}>
         Subtotal <Text style={styles.totalAmount}>$3,599</Text>
       </Text>
+      
       <Text style={styles.notice}>
         <Image source={{ uri: 'https://png.pngtree.com/png-vector/20220520/ourmid/pngtree-red-check-mark-icon-illustration-checkbox-check-mark-vector-png-image_46455572.jpg' }}
                 style={styles.checkIcon}/>

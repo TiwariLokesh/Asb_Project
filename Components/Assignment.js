@@ -55,6 +55,7 @@ const Assignment = () => {
                   source={{ uri: 'https://png.pngtree.com/png-vector/20190909/ourmid/pngtree-red-heart-icon-isolated-png-image_1726594.jpg' }}
                   style={styles.heartIcon}/>
               </TouchableOpacity>
+              
             </View>
             <View style={styles.details}>
               <Text style={styles.productName}>{item.name}</Text>

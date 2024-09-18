@@ -1,14 +1,13 @@
-import { View } from 'react-native'
-import React from 'react'
-import Design from './Components/Design';
+import React from 'react';
+import { SafeAreaView } from 'react-native';
+import UserList from './Components/UserList';
 
 const App = () => {
-  return (
-    <View style={{flex:1}}>
-    
-      <Design/>
-    </View>
-  )
-}
+    return (
+        <SafeAreaView>
+            <UserList />
+        </SafeAreaView>
+    );
+};
 
-export default App
+export default App;

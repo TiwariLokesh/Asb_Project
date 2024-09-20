@@ -1,20 +1,20 @@
 const express = require('express');
 const { MongoClient, ObjectId } = require('mongodb');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
-const app = express();
+const app = express(); // Create the Express app instance first
 const port = 3000;
-
 
 const uri = 'mongodb://localhost:27017';
 const client = new MongoClient(uri);
 const dbName = 'crud';
 const collectionName = 'users';
 
-
+app.use(cors()); // Now use cors middleware after initializing app
 app.use(bodyParser.json());
 
-
+// Get all users
 app.get('/users', async (req, res) => {
     try {
         await client.connect();
@@ -32,7 +32,7 @@ app.get('/users', async (req, res) => {
     }
 });
 
-// Add 
+// Add a user
 app.post('/users', async (req, res) => {
     try {
         await client.connect();
@@ -52,7 +52,7 @@ app.post('/users', async (req, res) => {
     }
 });
 
-// Update
+// Update a user by ID
 app.put('/users/:id', async (req, res) => {
     try {
         await client.connect();
@@ -81,7 +81,7 @@ app.put('/users/:id', async (req, res) => {
     }
 });
 
-// Delete 
+// Delete a user by ID
 app.delete('/users/:id', async (req, res) => {
     try {
         await client.connect();

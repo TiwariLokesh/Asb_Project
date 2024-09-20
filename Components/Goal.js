@@ -4,8 +4,8 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const MissedGoal = () => {
   return (
-    <View style={styles.missedGoalContainer}>
-      <Text style={styles.missedGoalText}>Goal is Missed</Text>
+    <View style={styles.missedContainer}>
+      <Text style={styles.missedText}>Goal is Missed</Text>
     </View>
   );
 };
@@ -13,8 +13,8 @@ const MissedGoal = () => {
 
 const MadeGoal = () => {
   return (
-    <View style={styles.madeGoalContainer}>
-      <Text style={styles.madeGoalText}>Goal is Done</Text>
+    <View style={styles.madeContainer}>
+      <Text style={styles.madeText}>Goal is Done</Text>
     </View>
   );
 };
@@ -33,7 +33,7 @@ const Goal = (props) => {
 
 
 const styles = StyleSheet.create({
-  missedGoalContainer: {
+  missedContainer: {
     backgroundColor: '#ffe6e6',  
     padding: 10,
     marginVertical: 10,
@@ -41,13 +41,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'red'
   },
-  missedGoalText: {
+  missedText: {
     color: 'red',  
     fontSize: 18,
     fontWeight: 'bold',
     textAlign: 'center'
   },
-  madeGoalContainer: {
+  madeContainer: {
     backgroundColor: '#e6ffe6', 
     padding: 10,
     marginVertical: 10,
@@ -55,7 +55,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: 'green'
   },
-  madeGoalText: {
+  madeText: {
     color: 'green', 
     fontSize: 18,
     fontWeight: 'bold',

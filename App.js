@@ -98,40 +98,39 @@
 
 import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
-import CinemaRecords from './Components/Cinema';
-import data from './Components/data.json'; // Import the smaller JSON data
+import Cinema from './Components/Cinema';
+import data from './Components/data.json'; 
 
 const App = () => {
   const [records, setRecords] = useState([]);
 
   useEffect(() => {
-    setRecords(data); // Initialize with the data from JSON
+    setRecords(data); 
   }, []);
 
-  // Fetch all records
+ 
   const getAllRecords = () => {
     setRecords(data);
   };
 
-  // Filter IPL records
   const getIPLRecords = () => {
     const iplRecords = data.filter((item) => item.prog_name.includes('IPL'));
     setRecords(iplRecords);
   };
 
-  // Fetch record with max views
+  
   const getMaxViewRecord = () => {
     const maxViewRecord = data.reduce((max, item) => (item.views > max.views ? item : max), data[0]);
     setRecords([maxViewRecord]);
   };
 
-  // Filter loss records where expenses are greater than income
+ 
   const getLossRecords = () => {
     const lossRecords = data.filter((item) => item.expenses > item.income_of_ad);
     setRecords(lossRecords);
   };
 
-  // Add a new record
+
   const addNewRecord = () => {
     const newRecord = {
       id: records.length + 1,
@@ -144,13 +143,13 @@ const App = () => {
     setRecords([...records, newRecord]);
   };
 
-  // Delete the 3rd record
+
   const deleteThirdRecord = () => {
     const updatedRecords = records.filter((_, index) => index !== 2);
     setRecords(updatedRecords);
   };
 
-  // Update expenses by 10%
+ 
   const updateExpenses = () => {
     const updatedRecords = records.map((item) => ({
       ...item,
@@ -161,39 +160,39 @@ const App = () => {
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Cinema Records Dashboard</Text>
+      <Text style={styles.title}>Cinema Records </Text>
 
-      <View style={styles.buttonGroup}>
-        <TouchableOpacity style={styles.button} onPress={getAllRecords}>
-          <Text style={styles.buttonText}>All Records</Text>
+      <View style={styles.btnGroup}>
+        <TouchableOpacity style={styles.btn} onPress={getAllRecords}>
+          <Text style={styles.btnText}>All Records</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={getIPLRecords}>
-          <Text style={styles.buttonText}>IPL Records</Text>
+        <TouchableOpacity style={styles.btn} onPress={getIPLRecords}>
+          <Text style={styles.btnText}>IPL Records</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={getMaxViewRecord}>
-          <Text style={styles.buttonText}>Max View Record</Text>
+        <TouchableOpacity style={styles.btn} onPress={getMaxViewRecord}>
+          <Text style={styles.btnText}>Max View Record</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={getLossRecords}>
-          <Text style={styles.buttonText}>Loss Records</Text>
+        <TouchableOpacity style={styles.btn} onPress={getLossRecords}>
+          <Text style={styles.btnText}>Loss Records</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={addNewRecord}>
-          <Text style={styles.buttonText}>Add New Record</Text>
+        <TouchableOpacity style={styles.btn} onPress={addNewRecord}>
+          <Text style={styles.btnText}>Add New Record</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={deleteThirdRecord}>
-          <Text style={styles.buttonText}>Delete 3rd Record</Text>
+        <TouchableOpacity style={styles.btn} onPress={deleteThirdRecord}>
+          <Text style={styles.btnText}>Delete 3rd Record</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={updateExpenses}>
-          <Text style={styles.buttonText}>Update Expenses by 10%</Text>
+        <TouchableOpacity style={styles.btn} onPress={updateExpenses}>
+          <Text style={styles.btnText}>Update Expenses by 10%</Text>
         </TouchableOpacity>
       </View>
 
-      <CinemaRecords records={records} />
+      <Cinema records={records} />
     </ScrollView>
   );
 };
@@ -212,13 +211,13 @@ const styles = StyleSheet.create({
     color: '#2c3e50',
     fontFamily: 'Arial',
   },
-  buttonGroup: {
+  btnGroup: {
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
   },
-  button: {
+  btn: {
     backgroundColor: '#4b79a1', 
     backgroundImage: 'linear-gradient(to right, #283e51, #4b79a1)',
     padding: 12,
@@ -227,7 +226,7 @@ const styles = StyleSheet.create({
     width: '85%',
     boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
   },
-  buttonText: {
+  btnText: {
     color: '#ecf0f1',
     textAlign: 'center',
     fontSize: 18,

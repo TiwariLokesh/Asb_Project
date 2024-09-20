@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
 
-const CinemaRecords = ({ records }) => {
+const Cinema = ({ records }) => {
   return (
     <View style={styles.container}>
       <FlatList
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CinemaRecords;
+export default Cinema;

@@ -1,0 +1,8 @@
+[
+    { "id": 1, "views": 120000, "prog_name": "Cricket Highlights", "date_telecast": "2024-01-01", "income_of_ad": 80000, "expenses": 50000 },
+    { "id": 2, "views": 250000, "prog_name": "Football Match", "date_telecast": "2024-01-02", "income_of_ad": 120000, "expenses": 70000 },
+    { "id": 3, "views": 90000, "prog_name": "Cooking Show", "date_telecast": "2024-01-03", "income_of_ad": 50000, "expenses": 30000 },
+    { "id": 4, "views": 200000, "prog_name": "News Hour", "date_telecast": "2024-01-04", "income_of_ad": 60000, "expenses": 40000 },
+    { "id": 5, "views": 180000, "prog_name": "Travel Diaries", "date_telecast": "2024-01-05", "income_of_ad": 75000, "expenses": 50000 }
+  ]
+  

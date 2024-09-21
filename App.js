@@ -104,6 +104,8 @@ import data from './Components/data.json';
 const App = () => {
   const [records, setRecords] = useState([]);
 
+
+  
   useEffect(() => {
     setRecords(data); 
   }, []);

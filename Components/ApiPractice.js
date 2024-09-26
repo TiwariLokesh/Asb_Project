@@ -1,9 +1,22 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const ApiPractice = () => {
 
-  const URL = 'https://fakestoreapi.com/products/1'
+    useEffect(() => {
+        getProducts();
+    }, []);
+  
+
+  const getProducts = () => {
+    const URL = 'https://fakestoreapi.com/products/1';
+
+    fetch(URL).then(res => {
+       return res.json(); //convert it into readable format
+    }).then(data => {
+        console.log(data);
+    })
+  }
   return (
     <View>
       <Text>ApiPractice</Text>

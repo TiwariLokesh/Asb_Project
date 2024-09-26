@@ -241,3 +241,17 @@
 // export default App;
 
 
+import { View } from 'react-native'
+import React from 'react'
+import ApiPractice from './Components/ApiPractice'
+
+const App = () => {
+  return (
+    <View style={{flex:1}}>
+      <ApiPractice/>
+    </View>
+  )
+}
+
+export default App
+

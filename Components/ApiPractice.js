@@ -23,6 +23,7 @@ const ApiPractice = () => {
     fetch(URL)
       .then(res => {
         if (!res.ok) {
+          
           throw new Error('Failed to fetch data');
         }
 

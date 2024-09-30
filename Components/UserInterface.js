@@ -1,111 +1,178 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity, Modal, StyleSheet } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Modal, Pressable, StyleSheet } from 'react-native';
 
-const StudentTable = () => {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [selectedStudent, setSelectedStudent] = useState(null);
+const studentData = [
+  {
+    id: 1,
+    name: "John Doe",
+    marks: { physics: 80, chemistry: 75, math: 90 }
+  },
+  {
+    id: 2,
+    name: "Jane Smith",
+    marks: { physics: 85, chemistry: 80, math: 88 }
+  },
+  {
+    id: 3,
+    name: "Sam Johnson",
+    marks: { physics: 70, chemistry: 60, math: 75 }
+  },
+  {
+    id: 4,
+    name: "Lucy Brown",
+    marks: { physics: 95, chemistry: 89, math: 92 }
+  },
+  {
+    id: 5,
+    name: "Mike Davis",
+    marks: { physics: 60, chemistry: 55, math: 65 }
+  }
+];
 
-  const students = [
-    { name: "John Doe", physics: 80, chemistry: 75, math: 90, totalMarks: 245 },
-    { name: "Jane Smith", physics: 85, chemistry: 80, math: 88, totalMarks: 253 },
-    { name: "Sam Johnson", physics: 70, chemistry: 60, math: 75, totalMarks: 205 },
-    { name: "Lucy Brown", physics: 95, chemistry: 89, math: 92, totalMarks: 276 },
-    { name: "Mike Davis", physics: 60, chemistry: 55, math: 65, totalMarks: 180 },
-  ];
+const RowItem = ({ student, showModal }) => (
+  <View style={styles.row}>
+    <TouchableOpacity style={styles.plusButton} onPress={showModal}>
+      <Text style={styles.plusText}>+</Text>
+    </TouchableOpacity>
+    <Text style={styles.nameColumn}>{student.name}</Text>
+    <Text style={styles.marksColumn}>
+      Physics: {student.marks.physics}, Chemistry: {student.marks.chemistry}, Math: {student.marks.math}
+    </Text>
+  </View>
+);
 
-  const openModal = (student) => {
-    setSelectedStudent(student);
-    setModalVisible(true);
+export default function StudentApp() {
+  const [currentStudent, setCurrentStudent] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openDetailsModal = (student) => {
+    setCurrentStudent(student);
+    setIsModalOpen(true);
   };
 
-  const closeModal = () => {
-    setModalVisible(false);
-    setSelectedStudent(null);
+  const closeDetailsModal = () => {
+    setIsModalOpen(false);
+    setCurrentStudent(null);
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Marks in PCM (out of 100)</Text>
-      {students.map((student, index) => (
-        <View key={index} style={styles.row}>
-          <Text>{index + 1}</Text>
-          <Text>{student.name}</Text>
-          <Text>Physics: {student.physics}, Chemistry: {student.chemistry}, Math: {student.math}</Text>
-          <TouchableOpacity onPress={() => openModal(student)}>
-            <Text style={styles.plusIcon}>+</Text>
-          </TouchableOpacity>
-        </View>
-      ))}
-
-      <Modal
-        animationType="slide"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={closeModal}
-      >
-        <View style={styles.modalView}>
-          {selectedStudent && (
-            <>
-              <Text style={styles.modalTitle}>Student Details</Text>
-              <Text>Name: {selectedStudent.name}</Text>
-              <Text>Total Marks: {selectedStudent.totalMarks}</Text>
-              <Text>Percentage: {(selectedStudent.totalMarks / 300 * 100).toFixed(2)}%</Text>
-              <TouchableOpacity onPress={closeModal} style={styles.closeButton}>
-                <Text>Close</Text>
-              </TouchableOpacity>
-            </>
-          )}
-        </View>
-      </Modal>
+      <View style={styles.header}>
+        <Text style={styles.headerText}>S.No</Text>
+        <Text style={styles.headerText}>Name</Text>
+        <Text style={styles.headerText}>Marks in PCM (out of 100)</Text>
+      </View>
+      <FlatList
+        data={studentData}
+        renderItem={({ item }) => (
+          <RowItem student={item} showModal={() => openDetailsModal(item)} />
+        )}
+        keyExtractor={(item) => item.id.toString()}
+      />
+      {currentStudent && (
+        <Modal
+          visible={isModalOpen}
+          transparent={true}
+          animationType="slide"
+        >
+          <View style={styles.modalBackground}>
+            <View style={styles.modalContent}>
+              <Text style={styles.modalTitle}>Details</Text>
+              <Text style={styles.modalText}>Name: {currentStudent.name}</Text>
+              <Text style={styles.modalText}>Physics: {currentStudent.marks.physics}</Text>
+              <Text style={styles.modalText}>Chemistry: {currentStudent.marks.chemistry}</Text>
+              <Text style={styles.modalText}>Math: {currentStudent.marks.math}</Text>
+              <Pressable style={styles.closeButton} onPress={closeDetailsModal}>
+                <Text style={styles.closeButtonText}>Close</Text>
+              </Pressable>
+            </View>
+          </View>
+        </Modal>
+      )}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 16,
   },
-  title: {
-    fontSize: 20,
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    backgroundColor: '#333',
+    padding: 16,
+  },
+  headerText: {
+    flex: 1,
+    color: '#fff',
     fontWeight: 'bold',
-    marginBottom: 20,
+    textAlign: 'center',
   },
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 10,
+    paddingVertical: 12,
     borderBottomWidth: 1,
     borderBottomColor: '#ccc',
-    paddingVertical: 10,
+    paddingHorizontal: 8,
   },
-  plusIcon: {
-    fontSize: 20,
-    color: 'blue',
+  plusButton: {
+    justifyContent: 'center',
+    paddingHorizontal: 8,
   },
-  modalView: {
-    margin: 20,
-    backgroundColor: 'white',
-    borderRadius: 20,
-    padding: 35,
-    alignItems: 'center',
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5,
-  },
-  modalTitle: {
+  plusText: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 15,
+    color: '#fff',
+    backgroundColor: '#000',
+    padding: 4,
+    borderRadius: 16,
+    textAlign: 'center',
+  },
+  nameColumn: {
+    flex: 1,
+    textAlign: 'center',
+    fontSize: 16,
+  },
+  marksColumn: {
+    flex: 1,
+    textAlign: 'right',
+    fontSize: 16,
+  },
+  modalBackground: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.5)',
+  },
+  modalContent: {
+    backgroundColor: '#fff',
+    padding: 24,
+    borderRadius: 12,
+    width: '80%',
+  },
+  modalTitle: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginBottom: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
+    paddingBottom: 8,
+  },
+  modalText: {
+    fontSize: 16,
+    marginVertical: 4,
   },
   closeButton: {
-    backgroundColor: '#2196F3',
-    borderRadius: 5,
+    marginTop: 16,
+    backgroundColor: '#ff5c5c',
+    borderRadius: 6,
     padding: 10,
-    marginTop: 20,
+  },
+  closeButtonText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: 'bold',
   },
 });
-
-export default StudentTable;

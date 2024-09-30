@@ -241,26 +241,42 @@
 // export default App;
 
 
-import { SafeAreaView, StyleSheet } from 'react-native'
+// import { SafeAreaView, StyleSheet } from 'react-native'
+// import React from 'react'
+// import ApiPractice from './Components/ApiPractice'
+
+// const App = () => {
+//   return (
+//     <SafeAreaView style={styles.container}>
+//       <ApiPractice/>
+//     </SafeAreaView>
+//   )
+// }
+
+// export default App
+
+// const styles = StyleSheet.create({
+//     container: {
+//         flex:1,
+//         backgroundColor:"#fff",
+//         alignItems:'center',
+//         justifyContent:'center'
+//     },
+// })
+
+
+
+import { View } from 'react-native'
 import React from 'react'
-import ApiPractice from './Components/ApiPractice'
+import UserInterface from './Components/UserInterface'
 
 const App = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <ApiPractice/>
-    </SafeAreaView>
+    <View style={{flex:1}}>
+     <UserInterface/>
+    </View>
   )
 }
 
 export default App
-
-const styles = StyleSheet.create({
-    container: {
-        flex:1,
-        backgroundColor:"#fff",
-        alignItems:'center',
-        justifyContent:'center'
-    },
-})
 

@@ -75,6 +75,7 @@ export default function StudentApp() {
           transparent={true}
           animationType="slide"
         >
+        
           <View style={styles.modalBackground}>
             <View style={styles.modalContent}>
               <Text style={styles.modalTitle}>Details</Text>

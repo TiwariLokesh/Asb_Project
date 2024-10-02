@@ -83,6 +83,7 @@ export default function StudentApp() {
               <Text style={styles.modalText}>Physics: {currentStudent.marks.physics}</Text>
               <Text style={styles.modalText}>Chemistry: {currentStudent.marks.chemistry}</Text>
               <Text style={styles.modalText}>Math: {currentStudent.marks.math}</Text>
+              {/* Button */}
               <Pressable style={styles.closeButton} onPress={closeDetailsModal}>
                 <Text style={styles.closeButtonText}>Close</Text>
               </Pressable>

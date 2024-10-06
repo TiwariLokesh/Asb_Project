@@ -12,24 +12,28 @@ const studentData = [
     name: "Jane Smith",
     marks: { physics: 85, chemistry: 80, math: 88 }
   },
+
   {
     id: 3,
-    name: "Sam Johnson",
+    name: "Sam",
     marks: { physics: 70, chemistry: 60, math: 75 }
   },
+
   {
     id: 4,
     name: "Lucy Brown",
-    marks: { physics: 95, chemistry: 89, math: 92 }
+    marks: { physics: 95, chemistry: 99, math: 92 }
   },
   {
     id: 5,
     name: "Mike Davis",
     marks: { physics: 60, chemistry: 55, math: 65 }
   }
+  
 ];
 
 const RowItem = ({ student, showModal }) => (
+
   <View style={styles.row}>
     <TouchableOpacity style={styles.plusButton} onPress={showModal}>
       <Text style={styles.plusText}>+</Text>

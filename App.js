@@ -266,17 +266,748 @@
 
 
 
-import { View } from 'react-native'
-import React from 'react'
-import UserInterface from './Components/UserInterface'
+// import React from 'react';
+// import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+// import Icon from 'react-native-vector-icons/Ionicons'; // Adjust the import based on the icon library you're using
+
+// const App = () => {
+//   const [activeTab, setActiveTab] = React.useState('Overview');
+  
+
+//   const InvestmentSummary = () => (
+//     <ScrollView style={styles.summaryContainer}>
+    
+      
+//       {/* Accordion Section */}
+//       <TouchableOpacity style={styles.accordionHeader}>
+//         <Text style={styles.accordionTitle}>All</Text>
+//         <Icon name=  "chevron-down" size={24} color="#fff" />
+//       </TouchableOpacity>
+      
+      
+//         <View style={styles.accordionContent}>
+//         <Text style={styles.summaryTitle}>Investment Summary</Text>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Investment Value (₹):</Text>
+//             <Text style={styles.value}>20,000</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Current Value (₹):</Text>
+//             <Text style={styles.value}>21,000</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Net Worth (₹):</Text>
+//             <Text style={styles.value}>21,000</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Day G/L (₹):</Text>
+//             <Text style={{color:"green"}}>-282 (1.38%)</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Overall G/L (₹):</Text>
+//             <Text style={{color:"red"}}>+1,000 (3.95%)</Text>
+//           </View>
+//         </View>
+
+
+// {/* Row2 */}
+// <View style={styles.row2}>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Booked Gain/Loss</Text>
+//             <Text style={styles.value}>2023-2024</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Released Gain/Loss</Text>
+//             <Text style={styles.value}>-20,000</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Short Term G/L</Text>
+//             <Text style={{color:"blue"}}>-20,000(-0.20%)</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Long Term G/L</Text>
+//             <Text style={styles.value}>0(0.00%)</Text>
+//           </View>
+//           </View>
+
+
+
+// {/* Row3 */}
+// <View style={styles.row2}>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Basket Name</Text>
+//             <Text style={styles.value}>BTC First Choice</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Investment Value (₹)</Text>
+//             <Text style={styles.value}>25,000</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Unit</Text>
+//             <Text style={{color:"blue"}}>3</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Current Value (₹)</Text>
+//             <Text style={styles.value}>50,000</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Overall G/L</Text>
+//             <Text style={styles.value}>+100%</Text>
+//           </View>
+//           </View>
+
+// <View style={styles.counter}>
+//   <Text style={styles.counterPlusIcon}>-</Text>
+//   <Text style={{color:'white'}}>5</Text>
+//   <Text style={styles.counterMinusIcon}>+</Text>
+// </View>
+
+
+// <TouchableOpacity style={styles.sellBtn}>
+//   <Text style={{color:'black', textAlign:'center', fontWeight:'bold'}}>Sell</Text>
+// </TouchableOpacity>
+      
+
+// {/* Last section */}
+// <View style={styles.row2}>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Basket Name</Text>
+//             <Text style={styles.value}>BTC First Choice</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Investment Value (₹)</Text>
+//             <Text style={styles.value}>25,000</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Unit</Text>
+//             <Text style={{color:"blue"}}>3</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Current Value (₹)</Text>
+//             <Text style={styles.value}>50,000</Text>
+//           </View>
+//           <View style={styles.row}>
+//             <Text style={styles.label}>Overall G/L</Text>
+//             <Text style={styles.value}>+100%</Text>
+//           </View>
+//           </View>
+
+
+//     </ScrollView>
+//   );
+
+//   return (
+//     <View style={styles.container}>
+//       <View style={styles.header}>
+//         <Text style={styles.headerTitle}>Portfolio</Text>
+//         <Icon name="ellipsis-vertical" size={24} color="black" />
+//       </View>
+
+//       <View style={styles.tabContainer}>
+//         <TouchableOpacity onPress={() => setActiveTab('Overview')} style={activeTab === 'Overview' ? styles.activeTab : styles.tab}>
+//           <Text style={{color:'white'}}>Overview</Text>
+//         </TouchableOpacity>
+//         <TouchableOpacity onPress={() => setActiveTab('Basket Order')} style={activeTab === 'Basket Order' ? styles.activeTab : styles.tab}>
+//           <Text style={{color:'white'}}>Basket Order</Text>
+//         </TouchableOpacity>
+//       </View>
+
+//       <ScrollView style={styles.contentContainer}>
+//         {activeTab === 'Overview' && <InvestmentSummary />}
+//         {/* Add Basket Order content here when the tab is active */}
+//       </ScrollView>
+
+//       <View style={styles.bottomNav}>
+//         <Icon name="home" size={24} color="white" />
+//         <Icon name="analytics" size={24} color="white" />
+//         <Icon name="wallet" size={24} color="white" />
+//         <Icon name="settings" size={24} color="white" />
+//         <Icon name="person" size={24} color="blue" />
+//       </View>
+//     </View>
+//   );
+// };
+
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     paddingTop: 20,
+//     backgroundColor: '#000',
+//   },
+//   header: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     padding: 16,
+//   },
+//   headerTitle: {
+//     fontSize: 20,
+//     fontWeight: 'bold',
+//     color:'#fff',
+//     textAlign:'center',
+//     flex:1
+//   },
+//   tabContainer: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-around',
+//     borderBottomWidth: 1,
+//     borderBottomColor: '#ccc',
+//   },
+//   tab: {
+//     paddingVertical: 16,
+//   },
+//   activeTab: {
+//     paddingVertical: 16,
+//     borderBottomWidth: 2,
+//     borderBottomColor: 'blue',
+//   },
+//   contentContainer: {
+//     padding: 16,
+//   },
+//   summaryContainer: {
+//     padding: 16,
+//     borderRadius: 8,
+//   },
+//   summaryTitle: {
+//     fontSize: 18,
+//     fontWeight: 'bold',
+//     color:'#fff'
+//   },
+//   accordionHeader: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     alignItems: 'center',
+//     paddingVertical: 12,
+//     paddingHorizontal:12,
+//     borderWidth: 1,
+//     borderColor: '#ccc',
+//     marginTop: -10,
+//     borderRadius:10,
+//   },
+//   accordionTitle: {
+//     fontSize: 16,
+//     color: '#fff',
+//   },
+//   accordionContent: {
+//     marginTop: 10,
+//     backgroundColor:"#000",
+//   },
+//   row: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     paddingVertical: 5,
+//   },
+//   row2:{
+// marginTop:25
+//   },
+//   label: {
+//     color: '#fff',
+//   },
+//   value: {
+//     color: '#fff',
+//   },
+//   counterContainer: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-between',
+//     alignItems: 'center',
+//     marginTop: 15,
+//   },
+//   counterLabel: {
+//     fontSize: 24,
+//     color: '#fff',
+//   },
+//   sellButton: {
+//     backgroundColor: 'blue',
+//     padding: 10,
+//     borderRadius: 5,
+//   },
+//   buttonText: {
+//     color: '#fff',
+//   },
+//   bottomNav: {
+//     flexDirection: 'row',
+//     justifyContent: 'space-around',
+//     padding: 16,
+//     borderTopWidth: 1,
+//     borderTopColor: '#ccc',
+//   },
+//   counter:{
+// borderWidth:1,
+// borderColor:"white",
+// marginTop:10,
+// borderRadius:8,
+// flex:1,
+// justifyContent:'space-between',
+// flexDirection:'row',
+// padding:10
+//   },
+//   counterPlusIcon:{
+//     borderWidth:1,
+//     borderColor:"white",
+//     color:'white',
+//     fontSize:18,
+//     paddingVertical:0,
+//     paddingHorizontal:10,
+//     borderRadius:8,
+//   },
+//   counterMinusIcon:{
+//     borderWidth:1,
+    
+//     color:'black',
+//     backgroundColor:'blue',
+//     fontSize:18,
+//     paddingVertical:0,
+//     paddingHorizontal:10,
+//     borderRadius:8,
+//   },
+//   sellBtn:{
+//     backgroundColor:'cyan',
+//     marginTop:20,
+//     borderRadius:5,
+//     paddingTop:10,
+//     paddingBottom:10
+   
+//   }
+// });
+
+// export default App;
+
+
+import React from 'react';
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons'; // Adjust the import based on the icon library you're using
 
 const App = () => {
+  const [activeTab, setActiveTab] = React.useState('Overview');
+
+  const InvestmentSummary = () => (
+    <ScrollView style={styles.summaryContainer}>
+      {/* Accordion Section */}
+      <TouchableOpacity style={styles.accordionHeader}>
+        <Text style={styles.accordionTitle}>All</Text>
+        <Icon name="chevron-down" size={24} color="#fff" />
+      </TouchableOpacity>
+      
+      <View style={styles.accordionContent}>
+        <Text style={styles.summaryTitle}>Investment Summary</Text>
+        {/* Investment Details */}
+        <View style={styles.row}>
+          <Text style={styles.label}>Investment Value (₹):</Text>
+          <Text style={styles.value}>20,000</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Current Value (₹):</Text>
+          <Text style={styles.value}>21,000</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Net Worth (₹):</Text>
+          <Text style={styles.value}>21,000</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Day G/L (₹):</Text>
+          <Text style={{color:"cyan"}}>-282 (1.38%)</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Overall G/L (₹):</Text>
+          <Text style={{color:"red"}}>+1,000 (3.95%)</Text>
+        </View>
+      </View>
+
+      {/* Additional Rows */}
+      <View style={styles.row2}>
+        <View style={styles.row}>
+          <Text style={styles.label}>Booked Gain/Loss</Text>
+          <Text style={styles.value}>2023-2024</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Released Gain/Loss</Text>
+          <Text style={styles.value}>-20,000</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Short Term G/L</Text>
+          <Text style={{color:"blue"}}>-20,000(-0.20%)</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Long Term G/L</Text>
+          <Text style={styles.value}>0(0.00%)</Text>
+        </View>
+      </View>
+
+      {/* Basket Details */}
+      <View style={styles.row2}>
+        <View style={styles.row}>
+          <Text style={styles.label}>Basket Name</Text>
+          <Text style={styles.value}>BTC First Choice</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Investment Value (₹)</Text>
+          <Text style={styles.value}>25,000</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Unit</Text>
+          <Text style={{color:"blue"}}>3</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Current Value (₹)</Text>
+          <Text style={styles.value}>50,000</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Overall G/L</Text>
+          <Text style={styles.value}>+100%</Text>
+        </View>
+      </View>
+
+      <View style={styles.counter}>
+        <Text style={styles.counterPlusIcon}>-</Text>
+        <Text style={{color:'white'}}>5</Text>
+        <Text style={styles.counterMinusIcon}>+</Text>
+      </View>
+
+      <TouchableOpacity style={styles.sellBtn}>
+        <Text style={{color:'black', textAlign:'center', fontWeight:'bold'}}>Sell</Text>
+      </TouchableOpacity>
+
+
+
+       {/* Basket Details */}
+       <View style={styles.row2}>
+        <View style={styles.row}>
+          <Text style={styles.label}>Basket Name</Text>
+          <Text style={styles.value}>BTC First Choice</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Investment Value (₹)</Text>
+          <Text style={styles.value}>25,000</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Unit</Text>
+          <Text style={{color:"blue"}}>3</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Current Value (₹)</Text>
+          <Text style={styles.value}>50,000</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Overall G/L</Text>
+          <Text style={styles.value}>+100%</Text>
+        </View>
+      </View>
+
+
+
+    </ScrollView>
+  );
+
+
+
+
+
+
+  const BasketOrderSummary = () => (
+    <ScrollView style={styles.summaryContainer}>
+   
+   <TouchableOpacity style={styles.accordionHeader}>
+        <Text style={styles.accordionTitle}>All</Text>
+        <Icon name="chevron-down" size={24} color="#fff" />
+      </TouchableOpacity>
+
+      {/* First */}
+      <View style={styles.row2}>
+        <View style={styles.row}>
+          <Text style={styles.label}>Date</Text>
+          <Text style={styles.value}>2023-08-04, 12:12:26</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Basket Name</Text>
+          <Text style={styles.value}>BTC First Choice</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Basket Type</Text>
+          <Text style={styles.value}>Spot Lifetime</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Side</Text>
+          <Text style={styles.value}>Buy</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Unit</Text>
+          <Text style={styles.value}>20</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Price Per Unit</Text>
+          <Text style={styles.value}>₹200</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Total</Text>
+          <Text style={styles.value}>₹500</Text>
+        </View>
+      </View>
+
+
+       {/* Second */}
+       <View style={styles.row2}>
+        <View style={styles.row}>
+          <Text style={styles.label}>Date</Text>
+          <Text style={styles.value}>2023-08-04, 12:12:26</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Basket Name</Text>
+          <Text style={styles.value}>BTC First Choice</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Basket Type</Text>
+          <Text style={styles.value}>Spot Enquiry</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Side</Text>
+          <Text style={styles.value}>Sell</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Unit</Text>
+          <Text style={styles.value}>20</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Price Per Unit</Text>
+          <Text style={styles.value}>₹200</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Total</Text>
+          <Text style={styles.value}>₹500</Text>
+        </View>
+      </View>
+
+
+
+ {/* Third */}
+ <View style={styles.row2}>
+        <View style={styles.row}>
+          <Text style={styles.label}>Date</Text>
+          <Text style={styles.value}>2023-08-04, 12:12:26</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Basket Name</Text>
+          <Text style={styles.value}>BTC First Choice</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Basket Type</Text>
+          <Text style={styles.value}>Spot Lifetime</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Side</Text>
+          <Text style={styles.value}>Perpetuals</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Unit</Text>
+          <Text style={styles.value}>20</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Price Per Unit</Text>
+          <Text style={styles.value}>₹200</Text>
+        </View>
+        <View style={styles.row}>
+          <Text style={styles.label}>Total</Text>
+          <Text style={styles.value}>₹500</Text>
+        </View>
+      </View>
+
+    </ScrollView>
+  );
+
   return (
-    <View style={{flex:1}}>
-     <UserInterface/>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>Portfolio</Text>
+        <Icon name="person-circle-outline" size={34} color="blue" />
+      </View>
+
+      <View style={styles.tabContainer}>
+        <TouchableOpacity onPress={() => setActiveTab('Overview')} style={activeTab === 'Overview' ? styles.activeTab : styles.tab}>
+          <Text style={{color:'white'}}>Overview</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => setActiveTab('Basket Order')} style={activeTab === 'Basket Order' ? styles.activeTab : styles.tab}>
+          <Text style={{color:'white'}}>Basket Order</Text>
+        </TouchableOpacity>
+      </View>
+
+      <ScrollView style={styles.contentContainer}>
+        {activeTab === 'Overview' && <InvestmentSummary />}
+        {activeTab === 'Basket Order' && <BasketOrderSummary />}
+      </ScrollView>
+
+      <View style={styles.bottomNav}>
+  <View style={styles.navItem}>
+    <Icon name="basket-outline" size={24} color="white" />
+    <Text style={styles.navText}>Basket</Text>
+  </View>
+  <View style={styles.navItem}>
+    <Icon name="analytics" size={24} color="white" />
+    <Text style={styles.navText}>Analytics</Text>
+  </View>
+  <View style={styles.navItem}>
+    <Icon name="aperture-outline" size={24} color="white" />
+    <Text style={styles.navText}>Orders</Text>
+  </View>
+  <View style={styles.navItem}>
+    <Icon name="wallet" size={24} color="white" />
+    <Text style={styles.navText}>Wallet</Text>
+  </View>
+  <View style={styles.navItem}>
+    <Icon name="briefcase-outline" size={24} color="blue" />
+    <Text style={{color:'blue'}}>Portfolio</Text>
+  </View>
+</View>
+
     </View>
-  )
-}
+  );
+};
 
-export default App
+const styles = StyleSheet.create({
+  container: {
+        flex: 1,
+        paddingTop: 20,
+        backgroundColor: '#000',
+      },
+      header: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 16,
+      },
+      headerTitle: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color:'#fff',
+        textAlign:'center',
+        flex:1
+      },
+      tabContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        borderBottomWidth: 1,
+        borderBottomColor: '#ccc',
+      },
+      tab: {
+        paddingVertical: 16,
+      },
+      activeTab: {
+        paddingVertical: 16,
+        borderBottomWidth: 2,
+        borderBottomColor: 'blue',
+      },
+      contentContainer: {
+        padding: 16,
+      },
+      summaryContainer: {
+        padding: 16,
+        borderRadius: 8,
+      },
+      summaryTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color:'#fff'
+      },
+      accordionHeader: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingVertical: 12,
+        paddingHorizontal:12,
+        borderWidth: 1,
+        borderColor: '#ccc',
+        marginTop: -10,
+        borderRadius:10,
+      },
+      accordionTitle: {
+        fontSize: 16,
+        color: '#fff',
+      },
+      accordionContent: {
+        marginTop: 10,
+        backgroundColor:"#000",
+      },
+      row: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingVertical: 5,
+      },
+      row2:{
+    marginTop:25
+      },
+      label: {
+        color: '#818589',
+      },
+      value: {
+        color: '#fff',
+      },
+      counterContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: 15,
+      },
+      counterLabel: {
+        fontSize: 24,
+        color: '#fff',
+      },
+      sellButton: {
+        backgroundColor: 'blue',
+        padding: 10,
+        borderRadius: 5,
+      },
+      buttonText: {
+        color: '#fff',
+      },
+      bottomNav: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        padding: 16,
+        borderTopWidth: 1,
+        borderTopColor: '#ccc',
+        backgroundColor: '#000', // To match the overall theme
+      },
+      navItem: {
+        alignItems: 'center',
+      },
+      navText: {
+        color: '#fff',
+        fontSize: 12,
+        marginTop: 4,
+      },      
+      counter:{
+    borderWidth:1,
+    borderColor:"white",
+    marginTop:10,
+    borderRadius:8,
+    flex:1,
+    justifyContent:'space-between',
+    flexDirection:'row',
+    padding:10
+      },
+      counterPlusIcon:{
+        borderWidth:1,
+        borderColor:"white",
+        color:'white',
+        fontSize:18,
+        paddingVertical:0,
+        paddingHorizontal:10,
+        borderRadius:8,
+      },
+      counterMinusIcon:{
+        borderWidth:1,
+        
+        color:'black',
+        backgroundColor:'blue',
+        fontSize:18,
+        paddingVertical:0,
+        paddingHorizontal:10,
+        borderRadius:8,
+      },
+      sellBtn:{
+        backgroundColor:'cyan',
+        marginTop:20,
+        borderRadius:5,
+        paddingTop:10,
+        paddingBottom:10
+       
+      }
+});
 
+export default App;

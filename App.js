@@ -846,6 +846,7 @@ const App = () => {
     <Icon name="aperture-outline" size={24} color="white" />
     <Text style={styles.navText}>Orders</Text>
   </View>
+  
   <View style={styles.navItem}>
     <Icon name="wallet" size={24} color="white" />
     <Text style={styles.navText}>Wallet</Text>

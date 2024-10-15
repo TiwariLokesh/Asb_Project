@@ -851,6 +851,7 @@ const App = () => {
     <Icon name="wallet" size={24} color="white" />
     <Text style={styles.navText}>Wallet</Text>
   </View>
+  
   <View style={styles.navItem}>
     <Icon name="briefcase-outline" size={24} color="blue" />
     <Text style={{color:'blue'}}>Portfolio</Text>

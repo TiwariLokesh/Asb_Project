@@ -860,6 +860,7 @@ const App = () => {
 </View>
 
     </View>
+    
   );
 };
 

@@ -804,6 +804,7 @@ const App = () => {
           <Text style={styles.value}>₹200</Text>
         </View>
         
+        
         <View style={styles.row}>
           <Text style={styles.label}>Total</Text>
           <Text style={styles.value}>₹500</Text>

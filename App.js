@@ -811,6 +811,7 @@ const App = () => {
           <Text style={styles.value}>₹500</Text>
         </View>
       </View>
+      
 
     </ScrollView>
   );

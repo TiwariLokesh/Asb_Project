@@ -25,6 +25,7 @@ const UserList = () => {
                     <Text style={styles.userData}>Age: {user.age}</Text>
                     <Button title="Show" onPress={() => alert(`User: ${user.name}`)} />
                 </View>
+                
             ))}
         </ScrollView>
     );

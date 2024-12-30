@@ -17,6 +17,7 @@ const UserList = () => {
     }, []);
 
     return (
+        
         <ScrollView style={styles.container}>
             {users.map((user, index) => (
                 <View key={index} style={styles.userRow}>

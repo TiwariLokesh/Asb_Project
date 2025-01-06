@@ -21,6 +21,7 @@ const UserList = () => {
         <ScrollView style={styles.container}>
             
             {users.map((user, index) => (
+                
                 <View key={index} style={styles.userRow}>
                     <Text style={styles.userData}>Name: {user.name}</Text>
                     <Text style={styles.userData}>Email: {user.email}</Text>

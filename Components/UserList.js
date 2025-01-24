@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
         padding: 20,
         backgroundColor: '#f5f5f5',
     },
+    
     userRow: {
         marginBottom: 20,
         padding: 10,

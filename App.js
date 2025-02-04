@@ -779,6 +779,7 @@ const App = () => {
 
  {/* Third */}
  <View style={styles.row2}>
+  
         <View style={styles.row}>
           <Text style={styles.label}>Date</Text>
           <Text style={styles.value}>2023-08-04, 12:12:26</Text>

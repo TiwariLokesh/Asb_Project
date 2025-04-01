@@ -797,6 +797,7 @@ const App = () => {
           <Text style={styles.label}>Side</Text>
           <Text style={styles.value}>Perpetuals</Text>
         </View>
+        
         <View style={styles.row}>
           <Text style={styles.label}>Unit</Text>
           <Text style={styles.value}>20</Text>
